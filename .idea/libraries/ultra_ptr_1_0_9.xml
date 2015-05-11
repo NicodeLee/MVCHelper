@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ultra-ptr-1.0.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MVCHelper_Demo/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.9/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/MVCHelper_Demo/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
