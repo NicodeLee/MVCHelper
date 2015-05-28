@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.shizhefei.view.mvc.demo"
-        minSdkVersion 15
+        minSdkVersion 10
         targetSdkVersion 22
     }
 
