@@ -27,6 +27,7 @@ import android.view.View;
 
 import com.shizhefei.mvc.helper.MVCHelper;
 import com.shizhefei.mvc.helper.MVCUltraHelper;
+import com.shizhefei.test.controllers.BaseActivity;
 import com.shizhefei.test.models.datasource.BooksDataSource;
 import com.shizhefei.test.models.enties.Book;
 import com.shizhefei.test.view.adapters.ReBooksAdapter;
@@ -38,7 +39,7 @@ import com.shizhefei.view.mvc.demo.R;
  * @author LuckyJayce
  *
  */
-public class UltraRecyclerViewActivity extends Activity {
+public class UltraRecyclerViewActivity extends BaseActivity {
 	private MVCHelper<List<Book>> listViewHelper;
 
 	@Override
@@ -64,6 +65,8 @@ public class UltraRecyclerViewActivity extends Activity {
 
 		// 加载数据
 		listViewHelper.refresh();
+
+		actionBar.setTitle("Ultra-RecyclerView");
 	}
 
 	@Override
@@ -73,8 +76,5 @@ public class UltraRecyclerViewActivity extends Activity {
 		listViewHelper.destory();
 	}
 
-	public void onClickBack(View view) {
-		finish();
-	}
 
 }

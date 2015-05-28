@@ -24,6 +24,7 @@ import android.view.View;
 
 import com.shizhefei.mvc.helper.MVCHelper;
 import com.shizhefei.mvc.helper.MVCSwipeRefreshHelper;
+import com.shizhefei.test.controllers.BaseActivity;
 import com.shizhefei.test.models.datasource.BooksDataSource;
 import com.shizhefei.test.models.enties.Book;
 import com.shizhefei.test.view.adapters.BooksAdapter;
@@ -35,7 +36,7 @@ import com.shizhefei.view.mvc.demo.R;
  * @author LuckyJayce
  *
  */
-public class SwipeRefreshActivity extends Activity {
+public class SwipeRefreshActivity extends BaseActivity {
 
 	private MVCHelper<List<Book>> listViewHelper;
 
@@ -59,6 +60,8 @@ public class SwipeRefreshActivity extends Activity {
 
 		// 加载数据
 		listViewHelper.refresh();
+
+		actionBar.setTitle("SwipeRefreshLayout");
 	}
 
 	@Override
@@ -68,8 +71,5 @@ public class SwipeRefreshActivity extends Activity {
 		listViewHelper.destory();
 	}
 
-	public void onClickBack(View view) {
-		finish();
-	}
 
 }

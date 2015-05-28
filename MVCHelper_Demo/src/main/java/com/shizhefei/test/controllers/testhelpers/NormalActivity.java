@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.shizhefei.mvc.IDataAdapter;
 import com.shizhefei.mvc.helper.MVCHelper;
 import com.shizhefei.mvc.helper.MVCNormalHelper;
+import com.shizhefei.test.controllers.BaseActivity;
 import com.shizhefei.test.models.datasource.BookDetailDataSource;
 import com.shizhefei.test.models.enties.Book;
 import com.shizhefei.view.mvc.demo.R;
@@ -33,7 +34,7 @@ import com.shizhefei.view.mvc.demo.R;
  * @author LuckyJayce
  *
  */
-public class NormalActivity extends Activity {
+public class NormalActivity extends BaseActivity {
 
 	private MVCHelper<Book> listViewHelper;
 	private TextView authorTextView;
@@ -60,6 +61,8 @@ public class NormalActivity extends Activity {
 
 		// 加载数据
 		listViewHelper.refresh();
+
+		actionBar.setTitle("不具有下拉刷新的非ListView界面");
 	}
 
 	@Override
@@ -92,7 +95,4 @@ public class NormalActivity extends Activity {
 		}
 	};
 
-	public void onClickBack(View view) {
-		finish();
-	}
 }

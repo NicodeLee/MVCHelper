@@ -17,13 +17,16 @@ package com.shizhefei.test.controllers.testhelpers;
 
 import java.util.List;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.shizhefei.mvc.helper.MVCHelper;
 import com.shizhefei.mvc.helper.MVCPullrefshHelper;
+import com.shizhefei.test.controllers.BaseActivity;
 import com.shizhefei.test.models.datasource.BooksDataSource;
 import com.shizhefei.test.models.enties.Book;
 import com.shizhefei.test.view.adapters.BooksAdapter;
@@ -31,43 +34,43 @@ import com.shizhefei.view.mvc.demo.R;
 
 /**
  * 测试下拉刷新组件，MVCPullrefshHelper
- * 
- * @author LuckyJayce
  *
+ * @author LuckyJayce
  */
-public class PullrefshActivity extends Activity {
+public class PullrefshActivity extends BaseActivity {
 
-	private MVCHelper<List<Book>> listViewHelper;
+    private MVCHelper<List<Book>> listViewHelper;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_pullrefsh);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pullrefsh);
 
-		// 设置LoadView的factory，用于创建使用者自定义的加载失败，加载中，加载更多等布局,写法参照DeFaultLoadViewFactory
-		// ListViewHelper.setLoadViewFactory(new LoadViewFactory());
+        // 设置LoadView的factory，用于创建使用者自定义的加载失败，加载中，加载更多等布局,写法参照DeFaultLoadViewFactory
+        // ListViewHelper.setLoadViewFactory(new LoadViewFactory());
 
-		PullToRefreshListView refreshListView = (PullToRefreshListView) findViewById(R.id.pullToRefreshListView);
-		listViewHelper = new MVCPullrefshHelper<List<Book>>(refreshListView);
+        PullToRefreshListView refreshListView = (PullToRefreshListView) findViewById(R.id.pullToRefreshListView);
+        listViewHelper = new MVCPullrefshHelper<List<Book>>(refreshListView);
 
-		// 设置数据源
-		listViewHelper.setDataSource(new BooksDataSource());
-		// 设置适配器
-		listViewHelper.setAdapter(new BooksAdapter(this));
+        // 设置数据源
+        listViewHelper.setDataSource(new BooksDataSource());
+        // 设置适配器
+        listViewHelper.setAdapter(new BooksAdapter(this));
 
-		// 加载数据
-		listViewHelper.refresh();
-	}
+        // 加载数据
+        listViewHelper.refresh();
 
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		// 释放资源
-		listViewHelper.destory();
-	}
+        actionBar.setTitle("PullToRefresh-Library");
 
-	public void onClickBack(View view) {
-		finish();
-	}
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 释放资源
+        listViewHelper.destory();
+    }
+
 
 }

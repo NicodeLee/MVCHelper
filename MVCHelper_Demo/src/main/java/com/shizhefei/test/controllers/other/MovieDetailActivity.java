@@ -28,6 +28,7 @@ import android.view.View;
 import com.shizhefei.mvc.helper.MVCHelper;
 import com.shizhefei.mvc.helper.MVCUltraHelper;
 import com.shizhefei.mvc.data.Data3;
+import com.shizhefei.test.controllers.BaseActivity;
 import com.shizhefei.test.models.datasource.MovieDetailDataSource;
 import com.shizhefei.test.models.enties.Discuss;
 import com.shizhefei.test.models.enties.Movie;
@@ -40,7 +41,7 @@ import com.shizhefei.view.mvc.demo.R;
  * @author LuckyJayce
  *
  */
-public class MovieDetailActivity extends Activity {
+public class MovieDetailActivity extends BaseActivity {
 
 	private MVCHelper<Data3<Movie, List<Discuss>, List<Movie>>> listViewHelper;
 
@@ -62,6 +63,8 @@ public class MovieDetailActivity extends Activity {
 
 		// 加载数据
 		listViewHelper.refresh();
+
+		actionBar.setTitle("Ultra-RecyclerView");
 	}
 
 	@Override
@@ -69,10 +72,6 @@ public class MovieDetailActivity extends Activity {
 		super.onDestroy();
 		// 释放资源
 		listViewHelper.destory();
-	}
-
-	public void onClickBack(View view) {
-		finish();
 	}
 
 }

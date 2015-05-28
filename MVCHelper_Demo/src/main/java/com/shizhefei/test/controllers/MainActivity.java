@@ -18,6 +18,7 @@ package com.shizhefei.test.controllers;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.shizhefei.test.controllers.other.BooDetailActivity;
@@ -29,12 +30,13 @@ import com.shizhefei.test.controllers.testhelpers.SwipeRefreshActivity;
 import com.shizhefei.test.controllers.testhelpers.UltraActivity;
 import com.shizhefei.view.mvc.demo.R;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		actionBar.setDisplayHomeAsUpEnabled(false);
 	}
 
 	public void onClickDemo(View view) {
