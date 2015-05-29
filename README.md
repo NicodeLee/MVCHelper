@@ -312,10 +312,12 @@ MVCUltraHelper
 MVCSwipeRefreshHelper  
 
 核心代码  
-MVCHelper_Library
+
+[MVCHelper_Library](https://github.com/rizhilee/MVCHelper/tree/master/MVCHelper_Library/src/main/java/com/shizhefei)  
 
 示例代码   
-MVCHelper_Demo
+
+[MVCHelper_Demo](https://github.com/rizhilee/MVCHelper/tree/master/MVCHelper_Demo/src/main/java/com/shizhefei/test)  
 
 License
 =======
