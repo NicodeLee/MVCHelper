@@ -1,0 +1,132 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From MVCHelper_Demo:
+* .gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+From MVCHelper_Library:
+* .gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+From MVCPullrefshHelper:
+* .gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+From MVCSwipeRefreshHelper:
+* .gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+From MVCUltraHelper:
+* .gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+From android-PullToRefresh-Library:
+* .gitignore
+* LICENSE
+* build.gradle
+* pom.xml
+From android-Ultra-Pull-To-Refresh-library:
+* .gitignore
+* build.gradle
+* checkstyle.xml
+* gradle-mvn-push.gradle
+* gradle.properties
+* pom.xml
+From android-support-v7-recyclerview:
+* .gitignore
+* ic_launcher-web.png
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:22.2.1
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In android-support-v7-recyclerview:
+* AndroidManifest.xml => androidsupportv7recyclerview/src/main/AndroidManifest.xml
+* res/ => androidsupportv7recyclerview/src/main/res/
+In MVCHelper_Library:
+* AndroidManifest.xml => mVCHelper_Library/src/main/AndroidManifest.xml
+* res/ => mVCHelper_Library/src/main/res/
+* src/ => mVCHelper_Library/src/main/java/
+In android-PullToRefresh-Library:
+* AndroidManifest.xml => androidPullToRefreshLibrary/src/main/AndroidManifest.xml
+* res/ => androidPullToRefreshLibrary/src/main/res/
+* src/ => androidPullToRefreshLibrary/src/main/java/
+In MVCPullrefshHelper:
+* AndroidManifest.xml => mVCPullrefshHelper/src/main/AndroidManifest.xml
+* src/ => mVCPullrefshHelper/src/main/java/
+In MVCSwipeRefreshHelper:
+* AndroidManifest.xml => mVCSwipeRefreshHelper/src/main/AndroidManifest.xml
+* src/ => mVCSwipeRefreshHelper/src/main/java/
+In android-Ultra-Pull-To-Refresh-library:
+* AndroidManifest.xml => androidUltraPullToRefreshlibrary/src/main/AndroidManifest.xml
+* libs/clog-1.0.2-sources.jar => androidUltraPullToRefreshlibrary/libs/clog-1.0.2-sources.jar
+* libs/clog-1.0.2.jar => androidUltraPullToRefreshlibrary/libs/clog-1.0.2.jar
+* res/ => androidUltraPullToRefreshlibrary/src/main/res/
+* src/ => androidUltraPullToRefreshlibrary/src/main/java/
+In MVCUltraHelper:
+* AndroidManifest.xml => mVCUltraHelper/src/main/AndroidManifest.xml
+* src/ => mVCUltraHelper/src/main/java/
+In MVCHelper_Demo:
+* AndroidManifest.xml => mVCHelper_Demo/src/main/AndroidManifest.xml
+* libs/android-async-http-1.4.8.jar => mVCHelper_Demo/libs/android-async-http-1.4.8.jar
+* libs/volley.jar => mVCHelper_Demo/libs/volley.jar
+* res/ => mVCHelper_Demo/src/main/res/
+* src/ => mVCHelper_Demo/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -18,25 +18,26 @@ package com.shizhefei.test.controllers;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.shizhefei.test.controllers.other.BooDetailActivity;
+import com.shizhefei.test.controllers.other.BookDetailActivity;
+import com.shizhefei.test.controllers.other.VolleyGridViewActivity;
 import com.shizhefei.test.controllers.other.MovieDetailActivity;
 import com.shizhefei.test.controllers.other.UltraRecyclerViewActivity;
+import com.shizhefei.test.controllers.task.LoginActivity;
+import com.shizhefei.test.controllers.task.UploadActivity;
 import com.shizhefei.test.controllers.testhelpers.NormalActivity;
 import com.shizhefei.test.controllers.testhelpers.PullrefshActivity;
 import com.shizhefei.test.controllers.testhelpers.SwipeRefreshActivity;
 import com.shizhefei.test.controllers.testhelpers.UltraActivity;
 import com.shizhefei.view.mvc.demo.R;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		actionBar.setDisplayHomeAsUpEnabled(false);
 	}
 
 	public void onClickDemo(View view) {
@@ -52,7 +53,7 @@ public class MainActivity extends BaseActivity {
 	}
 
 	public void onClickDemo4(View view) {
-		startActivity(new Intent(getApplicationContext(), BooDetailActivity.class));
+		startActivity(new Intent(getApplicationContext(), BookDetailActivity.class));
 	}
 
 	public void onClickDemo5(View view) {
@@ -65,6 +66,18 @@ public class MainActivity extends BaseActivity {
 
 	public void onClickDemo7(View view) {
 		startActivity(new Intent(getApplicationContext(), MovieDetailActivity.class));
+	}
+
+	public void onClickDemo8(View view) {
+		startActivity(new Intent(getApplicationContext(), VolleyGridViewActivity.class));
+	}
+
+	public void onClickTask1(View view) {
+		startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+	}
+
+	public void onClickTask2(View view) {
+		startActivity(new Intent(getApplicationContext(), UploadActivity.class));
 	}
 
 }

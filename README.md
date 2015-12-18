@@ -1,5 +1,7 @@
 # MVCHelper
 MVCHelper. 实现下拉刷新，滚动底部自动加载更多，分页加载，自动切换显示网络失败布局，暂无数据布局，,真正的MVC架构.  
+> 同步了原项目最新部分代码
+
 Download sample [Apk](https://github.com/rizhilee/MVCHelper/blob/master/raw/MVCHelper_Demo.apk?raw=true)  
 
 ##Screenshots

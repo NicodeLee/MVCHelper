@@ -27,9 +27,8 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 
-import com.shizhefei.mvc.helper.MVCHelper;
-import com.shizhefei.mvc.helper.MVCUltraHelper;
-import com.shizhefei.test.controllers.BaseActivity;
+import com.shizhefei.mvc.MVCHelper;
+import com.shizhefei.mvc.MVCUltraHelper;
 import com.shizhefei.test.models.datasource.BooksDataSource;
 import com.shizhefei.test.models.enties.Book;
 import com.shizhefei.test.view.adapters.BooksAdapter;
@@ -41,7 +40,7 @@ import com.shizhefei.view.mvc.demo.R;
  * @author LuckyJayce
  *
  */
-public class UltraActivity extends BaseActivity {
+public class UltraActivity extends Activity {
 	private MVCHelper<List<Book>> listViewHelper;
 
 	@Override
@@ -73,8 +72,6 @@ public class UltraActivity extends BaseActivity {
 
 		// 加载数据
 		listViewHelper.refresh();
-
-		actionBar.setTitle("Ultra-Pull-To-Refresh");
 	}
 
 	@Override
@@ -82,6 +79,10 @@ public class UltraActivity extends BaseActivity {
 		super.onDestroy();
 		// 释放资源
 		listViewHelper.destory();
+	}
+
+	public void onClickBack(View view) {
+		finish();
 	}
 
 	/**

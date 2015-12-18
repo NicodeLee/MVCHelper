@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.shizhefei.view.mvc.demo"
-        minSdkVersion 10
+        minSdkVersion 8
         targetSdkVersion 22
     }
 
@@ -19,6 +19,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':mVCHelper_Library')
+    compile 'com.google.code.gson:gson:2.2.4'
 }
